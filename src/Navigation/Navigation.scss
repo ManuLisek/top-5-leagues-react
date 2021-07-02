@@ -1,0 +1,52 @@
+@import "../styles/settings.scss";
+
+.navigation {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-color: $color-background-navigation;
+  border-bottom: 1px solid $color-font-main;
+  z-index: 1;
+
+  &__logo {
+    padding: 10px 0;
+    margin-left: 3vw;
+  }
+
+  &__image {
+    width: 160px;
+  }
+
+  &__list {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  &__list-item {
+    padding: 28px 2vw;
+    color: $color-font-main;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 4px solid $color-background-navigation;
+    transition: $transition-navigation;
+
+    &:hover {
+      background-color: $color-background-navigation-hover;
+      border-bottom-color: $color-background-navigation-hover;
+    }
+
+    &.active {
+      color: $color-details;
+      border-bottom-color: $color-details;
+    }
+  }
+
+  &__ligue1 {
+    margin-right: 2vw;
+  }
+}

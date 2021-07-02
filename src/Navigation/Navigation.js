@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink}  from 'react-router-dom';
-import logo from './images/logo.png';
+import logo from '../images/logo.png';
+import './Navigation.scss';
 
 const Navigation = () => (
   <div className='navigation'>
@@ -10,7 +11,7 @@ const Navigation = () => (
       <NavLink exact to='/PrimeraDivision' className='navigation__list-item' >Primera Division</NavLink>
       <NavLink exact to='/Bundesliga' className='navigation__list-item' >Bundesliga</NavLink>
       <NavLink exact to='/SerieA' className='navigation__list-item'>Serie A</NavLink>
-      <NavLink exact to='/Ligue1' className='navigation__list-item'>Ligue 1</NavLink>
+      <NavLink exact to='/Ligue1' className='navigation__list-item navigation__ligue1'>Ligue 1</NavLink>
     </nav>
   </div>
 );

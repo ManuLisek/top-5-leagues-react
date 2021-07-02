@@ -7,6 +7,7 @@ import PrimeraDivision from './Leagues/PrimeraDivision';
 import Bundesliga from './Leagues/Bundesliga';
 import SerieA from './Leagues/SerieA';
 import Ligue1 from './Leagues/Ligue1';
+import './styles/global.scss';
 
 
 const App = () => {

@@ -19,23 +19,61 @@ const App = () => {
 
     HighlightsAPI.getAllHighlights()
       .then(highlightsList => {
-        //console.log(matchesList)
         setHighlights([...highlightsList]);
       }); 
   }, []);
 
-  console.log(highlights);
+
 
   return(
     <BrowserRouter>
       <MainLayout>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/PremierLeague" component={PremierLeague}/>
-          <Route exact path="/PrimeraDivision" component={PrimeraDivision}/>
-          <Route exact path="/Bundesliga" component={Bundesliga}/>
-          <Route exact path="/SerieA" component={SerieA}/>
-          <Route exact path="/Ligue1" component={Ligue1}/>
+          <Route 
+            path="/" 
+            exact 
+            component={Home}
+          />
+          <Route 
+            path="/PremierLeague" 
+            render={() => 
+              <PremierLeague 
+                highlights={highlights} 
+              />
+            }
+          />
+          <Route 
+            path="/PrimeraDivision" 
+            render={() => 
+              <PrimeraDivision 
+                highlights={highlights} 
+              />
+            }
+          />
+          <Route 
+            path="/Bundesliga" 
+            render={() => 
+              <Bundesliga 
+                highlights={highlights}
+              />
+            }
+          />
+          <Route 
+            path="/SerieA" 
+            render={() => 
+              <SerieA 
+                highlights={highlights} 
+              />
+            }
+          />
+          <Route 
+            path="/Ligue1" 
+            render={() => 
+              <Ligue1 
+                highlights={highlights} 
+              />
+            }
+          />
         </Switch>
       </MainLayout>
     </BrowserRouter>

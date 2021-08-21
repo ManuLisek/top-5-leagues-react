@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import uuid from 'react-uuid';
 import './League.scss';
 
 const League = (props) => {
 
-  const {leagueName, flagUrl, alt} = props;
-    
+  const {leagueName, flagUrl, alt, highlights, competitionName} = props;
+  console.log(highlights);
+  const highlightsList = highlights.map(item => (
+    item.competition.name === competitionName
+      ? <li className="list" key={uuid()}>
+        {item.title}
+      </li>
+      :   ''
+  ));
   return (
     <div className="league">
       <header >
@@ -13,6 +21,9 @@ const League = (props) => {
           <img className="league__image" src={flagUrl}  alt={alt}/>
         </div>
         <h2 >{leagueName}</h2>
+        <ul>
+          {highlightsList}
+        </ul>
       </header>
 
     </div>
@@ -23,6 +34,8 @@ League.propTypes = {
   leagueName: PropTypes.string,
   flagUrl: PropTypes.string,
   alt: PropTypes.string,
+  highlights: PropTypes.array,
+  competitionName: PropTypes.string,
 };
 
 export default League;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import MainLayout from './MainLayout';
 import Home from './Home';
@@ -7,10 +7,24 @@ import PrimeraDivision from './Leagues/PrimeraDivision';
 import Bundesliga from './Leagues/Bundesliga';
 import SerieA from './Leagues/SerieA';
 import Ligue1 from './Leagues/Ligue1';
+import * as HighlightsAPI from './api/HighlightsAPI';
 import './styles/global.scss';
 
 
 const App = () => {
+
+  const [highlights, setHighlights] = useState([]);
+
+  useEffect(() => {
+
+    HighlightsAPI.getAllHighlights()
+      .then(highlightsList => {
+        //console.log(matchesList)
+        setHighlights([...highlightsList]);
+      }); 
+  }, []);
+
+  console.log(highlights);
 
   return(
     <BrowserRouter>

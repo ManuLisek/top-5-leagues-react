@@ -1,4 +1,5 @@
 import React from 'react';
+import Match from '../Match/Match';
 import PropTypes from 'prop-types';
 import uuid from 'react-uuid';
 import './League.scss';
@@ -6,11 +7,10 @@ import './League.scss';
 const League = (props) => {
 
   const {leagueName, flagUrl, alt, highlights, competitionName} = props;
-  console.log(highlights);
   const highlightsList = highlights.map(item => (
     item.competition.name === competitionName
       ? <li className="list" key={uuid()}>
-        {item.title}
+        <Match match={item} />
       </li>
       :   ''
   ));

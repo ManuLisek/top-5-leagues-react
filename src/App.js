@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useReducer} from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import MainLayout from './MainLayout';
 import Home from './Home';
@@ -9,12 +9,16 @@ import SerieA from './Leagues/SerieA';
 import Ligue1 from './Leagues/Ligue1';
 import NotFound from './NotFound/NotFound';
 import * as HighlightsAPI from './api/HighlightsAPI';
+import * as StandingsAPI from './api/StandingsAPI';
+import { initialStateStandings, standingsReducer } from './reducers/standingsReducer';
 import './styles/global.scss';
+
 
 
 const App = () => {
 
   const [highlights, setHighlights] = useState([]);
+  const [standingsState, standingsDispatch] = useReducer(standingsReducer, initialStateStandings);
 
   useEffect(() => {
 
@@ -24,8 +28,14 @@ const App = () => {
       }); 
   }, []);
 
+  useEffect(() => {
+    StandingsAPI.getAllStandings()
+      .then(allStandings => {
+        standingsDispatch({type: 'FETCH_STANDINGS', payload: allStandings});
+      });
+  }, []);
 
-
+  console.log(standingsState);
   return(
     <BrowserRouter>
       <MainLayout>

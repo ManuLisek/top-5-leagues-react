@@ -76,6 +76,7 @@ const App = () => {
             render={() => 
               <SerieA 
                 highlights={highlights} 
+                standings={standingsState.standingsSA}
               />
             }
           />

@@ -50,6 +50,7 @@ const App = () => {
             render={() => 
               <PremierLeague 
                 highlights={highlights} 
+                standings={standingsState.standingsPL}
               />
             }
           />

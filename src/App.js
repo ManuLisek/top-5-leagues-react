@@ -59,6 +59,7 @@ const App = () => {
             render={() => 
               <PrimeraDivision 
                 highlights={highlights} 
+                standings={standingsState.standingsPD}
               />
             }
           />

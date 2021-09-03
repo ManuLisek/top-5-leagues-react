@@ -15,10 +15,12 @@ const SerieA = (props) => {
       <td className={`standings__td standings__td--bold ${standing.position <= 4 
         ? 'standings__td--green' 
         : (standing.position === 5
-          ? 'standings__td--lightgreen'
-          : (standing.position >= 18
-            ? 'standings__td--red'
-            : ''))}`}>{standing.position}</td>
+          ? 'standings__td--limegreen'
+          : (standing.position === 6
+            ? 'standings__td--lightgreen'
+            : (standing.position >= 18
+              ? 'standings__td--red'
+              : '')))}`}>{standing.position}</td>
       <td className="standings__td standings__td--img"><img className="standings__club-img"src={`${standing.team.crestUrl}`} alt={standing.team.name}/></td>
       <td className="standings__td standings__td--team-name">{standing.team.name}</td>
       <td className="standings__td standings__td--bold">{standing.playedGames}</td>
@@ -40,8 +42,12 @@ const SerieA = (props) => {
         <td className="standings__key-item" colSpan="8">UEFA Champions League</td>
       </tr>
       <tr className="standings__tr">
-        <td className="standings__td--lightgreen"></td>
+        <td className="standings__td--limegreen"></td>
         <td className="standings__key-item" colSpan="8">UEFA Europa League</td>
+      </tr>
+      <tr className="standings__tr">
+        <td className="standings__td--lightgreen"></td>
+        <td className="standings__key-item" colSpan="8">UEFA Conference League Qualifiers</td>
       </tr>
       <tr className="standings__tr">
         <td className="standings__td--red"></td>

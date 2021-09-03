@@ -68,6 +68,7 @@ const App = () => {
             render={() => 
               <Bundesliga 
                 highlights={highlights}
+                standings={standingsState.standingsBL1}
               />
             }
           />

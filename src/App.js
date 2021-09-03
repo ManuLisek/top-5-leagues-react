@@ -86,6 +86,7 @@ const App = () => {
             render={() => 
               <Ligue1 
                 highlights={highlights} 
+                standings={standingsState.standingsFL1}
               />
             }
           />

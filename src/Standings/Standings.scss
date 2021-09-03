@@ -30,8 +30,18 @@
       color: $color-font-main;
     }
 
+    &--limegreen {
+      background-color: $color-standings-limegreen;
+      color: $color-font-main;
+    }
+
     &--lightgreen {
       background-color: $color-standings-lightgreen;
+      color: $color-font-main;
+    }
+
+    &--orange {
+      background-color: $color-standings-orange;
       color: $color-font-main;
     }
 

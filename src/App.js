@@ -10,7 +10,9 @@ import Ligue1 from './Leagues/Ligue1';
 import NotFound from './NotFound/NotFound';
 import * as HighlightsAPI from './api/HighlightsAPI';
 import * as StandingsAPI from './api/StandingsAPI';
+import * as ScorersAPI from './api/ScorersAPI';
 import { initialStateStandings, standingsReducer } from './reducers/standingsReducer';
+import { initialStateScorers, scorersReducer } from './reducers/scorersReducer';
 import './styles/global.scss';
 
 
@@ -19,6 +21,7 @@ const App = () => {
 
   const [highlights, setHighlights] = useState([]);
   const [standingsState, standingsDispatch] = useReducer(standingsReducer, initialStateStandings);
+  const [scorersState, scorersDispatch] = useReducer(scorersReducer, initialStateScorers);
 
   useEffect(() => {
 
@@ -33,9 +36,13 @@ const App = () => {
       .then(allStandings => {
         standingsDispatch({type: 'FETCH_STANDINGS', payload: allStandings});
       });
+    ScorersAPI.getAllScorers()
+      .then(allScorers => {
+        scorersDispatch({type: 'FETCH_SCORERS', payload: allScorers});
+      }); 
   }, []);
 
-  console.log(standingsState);
+  console.log(scorersState);
   return(
     <BrowserRouter>
       <MainLayout>

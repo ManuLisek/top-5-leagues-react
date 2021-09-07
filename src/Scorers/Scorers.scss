@@ -1,12 +1,7 @@
 @import "../styles/settings.scss";
 
 .scorers {
-  background-color: $color-font-main;
-  border: 1px solid $color-font-main;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 14px;
-  text-align: center;
+  @include table;
   margin: 30px auto;
 
   &__td {
@@ -26,10 +21,7 @@
   }
 
   &__th {
-    height: 32px;
-    padding: 5px 8px;
-    background-color: $color-background-features;
-    color: $color-font-main;
+    @include th;
   }
 
   &__club-img {

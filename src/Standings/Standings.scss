@@ -1,30 +1,21 @@
 @import "../styles/settings.scss";
 
 .standings {
-  background-color: $color-font-main;
-  border: 1px solid $color-font-main;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 14px;
-  text-align: center;
+  @include table;
   margin: 110px auto 30px auto;
 
   &__td {
     border: 1px solid $color-font-main;
     padding: 5px 8px;
-
     &--bold {
       font-weight: bold;
     }
-
     &--img {
       width: 50px;
     }
-
     &--team-name {
       width: 177px;
     }
-
     &--green {
       background-color: $color-standings-green;
       color: $color-font-main;
@@ -57,10 +48,7 @@
   }
 
   &__th {
-    height: 32px;
-    padding: 5px 8px;
-    background-color: $color-background-features;
-    color: $color-font-main;
+    @include th;
   }
 
   &__tr {
@@ -82,5 +70,15 @@
     border: 1px solid $color-font-main;
     padding: 5px 8px;
     text-align: left;
+  }
+}
+
+@media (max-width: 785px) {
+  .standings {
+    margin: 40px auto 30px auto;
+
+    &__td {
+      padding: 5px 4px;
+    }
   }
 }

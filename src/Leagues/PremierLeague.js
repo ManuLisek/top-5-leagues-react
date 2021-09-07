@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const PremierLeague = (props) => {
 
-  const { highlights, standings } = props;
+  const { highlights, standings, scorers } = props;
   const competitionName = 'ENGLAND: Premier League';
   const leagueName = 'Premier League';
   const flagUrl = 'https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg';
@@ -60,6 +60,7 @@ const PremierLeague = (props) => {
         highlights={highlights}
         table={table}
         tableKey={tableKey}
+        scorers={scorers}
       />
     </div>
   );
@@ -68,6 +69,7 @@ const PremierLeague = (props) => {
 PremierLeague.propTypes = {
   highlights: PropTypes.array,
   standings: PropTypes.array,
+  scorers: PropTypes.array,
 };
 
 export default PremierLeague;

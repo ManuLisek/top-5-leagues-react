@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Ligue1 = (props) => {
 
-  const { highlights, standings } = props;
+  const { highlights, standings, scorers } = props;
   const competitionName = 'FRANCE: Ligue 1';
   const leagueName = 'Ligue 1';
   const flagUrl = 'https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg';
@@ -78,6 +78,7 @@ const Ligue1 = (props) => {
         highlights={highlights}
         table={table}
         tableKey={tableKey}
+        scorers={scorers}
       />
     </div>
   );
@@ -86,6 +87,7 @@ const Ligue1 = (props) => {
 Ligue1.propTypes = {
   highlights: PropTypes.array,
   standings: PropTypes.array,
+  scorers: PropTypes.array,
 };
 
 export default Ligue1;

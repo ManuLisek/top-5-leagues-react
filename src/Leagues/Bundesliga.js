@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Bundesliga = (props) => {
 
-  const { highlights, standings } = props;
+  const { highlights, standings, scorers } = props;
   const competitionName = 'GERMANY: Bundesliga';
   const leagueName = 'Bundesliga';
   const flagUrl = 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg';
@@ -72,6 +72,7 @@ const Bundesliga = (props) => {
         highlights={highlights} 
         table={table}
         tableKey={tableKey}
+        scorers={scorers}
       />
     </div>
   );
@@ -80,6 +81,7 @@ const Bundesliga = (props) => {
 Bundesliga.propTypes = {
   highlights: PropTypes.array,
   standings: PropTypes.array,
+  scorers: PropTypes.array,
 };
 
 export default Bundesliga;

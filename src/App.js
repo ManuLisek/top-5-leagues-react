@@ -58,6 +58,7 @@ const App = () => {
               <PremierLeague 
                 highlights={highlights} 
                 standings={standingsState.standingsPL}
+                scorers={scorersState.scorersPL}
               />
             }
           />
@@ -67,6 +68,7 @@ const App = () => {
               <PrimeraDivision 
                 highlights={highlights} 
                 standings={standingsState.standingsPD}
+                scorers={scorersState.scorersPD}
               />
             }
           />
@@ -76,6 +78,7 @@ const App = () => {
               <Bundesliga 
                 highlights={highlights}
                 standings={standingsState.standingsBL1}
+                scorers={scorersState.scorersBL1}
               />
             }
           />
@@ -85,6 +88,7 @@ const App = () => {
               <SerieA 
                 highlights={highlights} 
                 standings={standingsState.standingsSA}
+                scorers={scorersState.scorersSA}
               />
             }
           />
@@ -94,6 +98,7 @@ const App = () => {
               <Ligue1 
                 highlights={highlights} 
                 standings={standingsState.standingsFL1}
+                scorers={scorersState.scorersFL1}
               />
             }
           />

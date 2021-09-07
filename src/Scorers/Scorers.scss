@@ -1,0 +1,38 @@
+@import "../styles/settings.scss";
+
+.scorers {
+  background-color: $color-font-main;
+  border: 1px solid $color-font-main;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
+  text-align: center;
+  margin: 30px auto;
+
+  &__td {
+    border: 1px solid $color-font-main;
+    padding: 5px 8px;
+
+    &--bold {
+      font-weight: bold;
+    }
+
+    &--img {
+      width: 50px;
+    }
+    &--player-name {
+      width: 160px;
+    }
+  }
+
+  &__th {
+    height: 32px;
+    padding: 5px 8px;
+    background-color: $color-background-features;
+    color: $color-font-main;
+  }
+
+  &__club-img {
+    height: 17px;
+  }
+}

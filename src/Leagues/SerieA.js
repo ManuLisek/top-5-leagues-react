@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const SerieA = (props) => {
 
-  const { highlights, standings} = props;
+  const { highlights, standings, scorers } = props;
   const competitionName = 'ITALY: Serie A' ;
   const leagueName = 'Serie A';
   const flagUrl = 'https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg';
@@ -66,6 +66,7 @@ const SerieA = (props) => {
         highlights={highlights}
         table={table}
         tableKey={tableKey}
+        scorers={scorers}
       />
     </div>
   );
@@ -74,6 +75,7 @@ const SerieA = (props) => {
 SerieA.propTypes = {
   highlights: PropTypes.array,
   standings: PropTypes.array,
+  scorers: PropTypes.array,
 };
 
 export default SerieA;

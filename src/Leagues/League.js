@@ -2,12 +2,13 @@ import React from 'react';
 import Match from '../Match/Match';
 import PropTypes from 'prop-types';
 import Standings from '../Standings/Standings';
+import Scorers from '../Scorers/Scorers';
 import uuid from 'react-uuid';
 import './League.scss';
 
 const League = (props) => {
 
-  const {leagueName, flagUrl, alt, highlights, competitionName, table, tableKey} = props;
+  const {leagueName, flagUrl, alt, highlights, competitionName, table, tableKey, scorers} = props;
   const highlightsList = highlights.map(item => (
     item.competition.name === competitionName
       ? <li className="list" key={uuid()}>
@@ -27,6 +28,7 @@ const League = (props) => {
         </ul>
       </header>
       <Standings table={table} tableKey={tableKey}/>
+      <Scorers scorers={scorers}/>
     </div>
   );
 };
@@ -39,6 +41,7 @@ League.propTypes = {
   competitionName: PropTypes.string,
   table: PropTypes.array,
   tableKey: PropTypes.object,
+  scorers: PropTypes.array,
 };
 
 export default League;

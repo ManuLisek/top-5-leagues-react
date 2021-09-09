@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useReducer} from 'react';
+import React, {useEffect, useReducer} from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import MainLayout from './MainLayout';
 import Home from './Home';
@@ -11,6 +11,7 @@ import NotFound from './NotFound/NotFound';
 import * as HighlightsAPI from './api/HighlightsAPI';
 import * as StandingsAPI from './api/StandingsAPI';
 import * as ScorersAPI from './api/ScorersAPI';
+import { initialStateHighlights, highlightsReducer } from './reducers/highlightsReducer';
 import { initialStateStandings, standingsReducer } from './reducers/standingsReducer';
 import { initialStateScorers, scorersReducer } from './reducers/scorersReducer';
 import './styles/global.scss';
@@ -19,16 +20,15 @@ import './styles/global.scss';
 
 const App = () => {
 
-  const [highlights, setHighlights] = useState([]);
+  const [highlightsState, highlightsDispatch] = useReducer(highlightsReducer, initialStateHighlights);
   const [standingsState, standingsDispatch] = useReducer(standingsReducer, initialStateStandings);
   const [scorersState, scorersDispatch] = useReducer(scorersReducer, initialStateScorers);
 
   useEffect(() => {
-
     HighlightsAPI.getAllHighlights()
-      .then(highlightsList => {
-        setHighlights([...highlightsList]);
-      }); 
+      .then(allHighlights => {
+        highlightsDispatch({type: 'FETCH_HIGHLIGHTS', payload: allHighlights});
+      });
   }, []);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const App = () => {
             path="/PremierLeague" 
             render={() => 
               <PremierLeague 
-                highlights={highlights} 
+                highlights={highlightsState.highlights} 
                 standings={standingsState.standingsPL}
                 scorers={scorersState.scorersPL}
               />
@@ -66,7 +66,7 @@ const App = () => {
             path="/PrimeraDivision" 
             render={() => 
               <PrimeraDivision 
-                highlights={highlights} 
+                highlights={highlightsState.highlights} 
                 standings={standingsState.standingsPD}
                 scorers={scorersState.scorersPD}
               />
@@ -76,7 +76,7 @@ const App = () => {
             path="/Bundesliga" 
             render={() => 
               <Bundesliga 
-                highlights={highlights}
+                highlights={highlightsState.highlights}
                 standings={standingsState.standingsBL1}
                 scorers={scorersState.scorersBL1}
               />
@@ -86,7 +86,7 @@ const App = () => {
             path="/SerieA" 
             render={() => 
               <SerieA 
-                highlights={highlights} 
+                highlights={highlightsState.highlights} 
                 standings={standingsState.standingsSA}
                 scorers={scorersState.scorersSA}
               />
@@ -96,7 +96,7 @@ const App = () => {
             path="/Ligue1" 
             render={() => 
               <Ligue1 
-                highlights={highlights} 
+                highlights={highlightsState.highlights} 
                 standings={standingsState.standingsFL1}
                 scorers={scorersState.scorersFL1}
               />

@@ -1,0 +1,48 @@
+@import "../styles/settings.scss";
+
+.highlights {
+  flex-grow: 1;
+  //   padding: 0 10px;
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  &__match-container {
+    width: 70%;
+  }
+  &__matches-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    font-size: 20px;
+    color: $color-font-main;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__flag-container {
+    height: 134px;
+  }
+
+  &__image {
+    width: 200px;
+    height: auto;
+  }
+
+  &__fieldset {
+    margin-top: 20px;
+    border: 1px solid $color-font-fieldset;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+  }
+
+  &__date {
+    // margin: 0 30% 0 5%;
+    margin-left: 5%;
+    color: $color-font-fieldset;
+    white-space: nowrap;
+  }
+}

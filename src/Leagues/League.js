@@ -1,37 +1,25 @@
 import React from 'react';
-import Match from '../Match/Match';
 import PropTypes from 'prop-types';
+import Highlights from '../Highlights/Highlights';
 import Standings from '../Standings/Standings';
 import Scorers from '../Scorers/Scorers';
-import uuid from 'react-uuid';
 import './League.scss';
 
 const League = (props) => {
 
   const {leagueName, flagUrl, alt, highlights, competitionName, table, tableKey, scorers} = props;
-  const highlightsList = highlights.map(item => (
-    item.competition.name === competitionName
-      ? <li className="list" key={uuid()}>
-        <Match match={item} />
-      </li>
-      :   ''
-  ));
-  return (
-    <div className="league">
-      <header >
-        <div >
-          <img className="league__image" src={flagUrl}  alt={alt}/>
-        </div>
-        <h2 >{leagueName}</h2>
-        <ul>
-          {highlightsList}
-        </ul>
-      </header>
-      <Standings table={table} tableKey={tableKey}/>
-      <Scorers scorers={scorers}/>
-    </div>
-  );
-};
+
+  return(
+    <section className="league">
+      <main className="league__main">
+        <Highlights highlights={highlights} competitionName={competitionName} leagueName={leagueName} flagUrl={flagUrl} alt={alt}/>
+      </main>
+      <aside className="league__aside">
+        <Standings table={table} tableKey={tableKey}/>
+        <Scorers scorers={scorers} />
+      </aside>
+    </section>
+  );};
 
 League.propTypes = {
   leagueName: PropTypes.string,

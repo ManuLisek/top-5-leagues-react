@@ -27,19 +27,34 @@ const App = () => {
   useEffect(() => {
     HighlightsAPI.getAllHighlights()
       .then(allHighlights => {
-        highlightsDispatch({type: 'FETCH_HIGHLIGHTS', payload: allHighlights});
+        highlightsDispatch({type: 'FETCH_HIGHLIGHTS_SUCCESS', payload: allHighlights});
+      })
+      .catch(error => {
+        highlightsDispatch({type: 'FETCH_HIGHLIGHTS_ERROR'});
+        console.log(error);
       });
   }, []);
 
   useEffect(() => {
     StandingsAPI.getAllStandings()
       .then(allStandings => {
-        standingsDispatch({type: 'FETCH_STANDINGS', payload: allStandings});
+        standingsDispatch({type: 'FETCH_STANDINGS_SUCCESS', payload: allStandings});
+      })
+      .catch(error => {
+        standingsDispatch({type: 'FETCH_STANDINGS_ERROR'});
+        console.log(error);
       });
+  }, []);
+
+  useEffect(() => {
     ScorersAPI.getAllScorers()
       .then(allScorers => {
-        scorersDispatch({type: 'FETCH_SCORERS', payload: allScorers});
-      }); 
+        scorersDispatch({type: 'FETCH_SCORERS_SUCCESS', payload: allScorers});
+      }) 
+      .catch(error => {
+        scorersDispatch({type: 'FETCH_SCORERS_ERROR'});
+        console.log(error);
+      });
   }, []);
 
   console.log(scorersState);
@@ -57,8 +72,11 @@ const App = () => {
             render={() => 
               <PremierLeague 
                 highlights={highlightsState.highlights} 
+                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsPL}
+                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersPL}
+                haveScorersError={scorersState.haveScorersError}
               />
             }
           />
@@ -67,8 +85,11 @@ const App = () => {
             render={() => 
               <PrimeraDivision 
                 highlights={highlightsState.highlights} 
+                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsPD}
+                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersPD}
+                haveScorersError={scorersState.haveScorersError}
               />
             }
           />
@@ -77,8 +98,11 @@ const App = () => {
             render={() => 
               <Bundesliga 
                 highlights={highlightsState.highlights}
+                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsBL1}
+                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersBL1}
+                haveScorersError={scorersState.haveScorersError}
               />
             }
           />
@@ -87,8 +111,11 @@ const App = () => {
             render={() => 
               <SerieA 
                 highlights={highlightsState.highlights} 
+                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsSA}
+                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersSA}
+                haveScorersError={scorersState.haveScorersError}
               />
             }
           />
@@ -97,8 +124,11 @@ const App = () => {
             render={() => 
               <Ligue1 
                 highlights={highlightsState.highlights} 
+                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsFL1}
+                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersFL1}
+                haveScorersError={scorersState.haveScorersError}
               />
             }
           />

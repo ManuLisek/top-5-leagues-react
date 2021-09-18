@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Ligue1 = (props) => {
 
-  const { highlights, haveHighlightsError, standings, haveStandingsError, scorers, haveScorersError } = props;
+  const {highlights, areHighlightsLoading, haveHighlightsError, standings, areStandingsLoading, haveStandingsError, scorers, areScorersLoading, haveScorersError} = props;
   const competitionName = 'FRANCE: Ligue 1';
   const leagueName = 'Ligue 1';
   const flagUrl = 'https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg';
@@ -71,15 +71,18 @@ const Ligue1 = (props) => {
   return (
     <div>
       <League 
-        highlights={highlights}
+        highlights={highlights} 
+        areHighlightsLoading={areHighlightsLoading}
         haveHighlightsError={haveHighlightsError}
+        areStandingsLoading={areStandingsLoading}
         haveStandingsError={haveStandingsError}
         scorers={scorers}
+        areScorersLoading={areScorersLoading}
         haveScorersError={haveScorersError}
+        competitionName={competitionName} 
         leagueName={leagueName} 
         flagUrl={flagUrl} 
-        alt={alt} 
-        competitionName={competitionName} 
+        alt={alt}
         table={table}
         tableKey={tableKey}
       />
@@ -89,10 +92,13 @@ const Ligue1 = (props) => {
 
 Ligue1.propTypes = {
   highlights: PropTypes.array,
+  areHighlightsLoading: PropTypes.bool,
   haveHighlightsError: PropTypes.bool,
   standings: PropTypes.array,
+  areStandingsLoading: PropTypes.bool,
   haveStandingsError: PropTypes.bool,
   scorers: PropTypes.array,
+  areScorersLoading: PropTypes.bool,
   haveScorersError: PropTypes.bool,
 };
 

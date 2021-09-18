@@ -72,10 +72,13 @@ const App = () => {
             render={() => 
               <PremierLeague 
                 highlights={highlightsState.highlights} 
+                areHighlightsLoading={highlightsState.areHighlightsLoading}
                 haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsPL}
+                areStandingsLoading={standingsState.areStandingsLoading}
                 haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersPL}
+                areScorersLoading={scorersState.areScorersLoading}
                 haveScorersError={scorersState.haveScorersError}
               />
             }
@@ -85,10 +88,13 @@ const App = () => {
             render={() => 
               <PrimeraDivision 
                 highlights={highlightsState.highlights} 
+                areHighlightsLoading={highlightsState.areHighlightsLoading}
                 haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsPD}
+                areStandingsLoading={standingsState.areStandingsLoading}
                 haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersPD}
+                areScorersLoading={scorersState.areScorersLoading}
                 haveScorersError={scorersState.haveScorersError}
               />
             }
@@ -98,10 +104,13 @@ const App = () => {
             render={() => 
               <Bundesliga 
                 highlights={highlightsState.highlights}
+                areHighlightsLoading={highlightsState.areHighlightsLoading}
                 haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsBL1}
+                areStandingsLoading={standingsState.areStandingsLoading}
                 haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersBL1}
+                areScorersLoading={scorersState.areScorersLoading}
                 haveScorersError={scorersState.haveScorersError}
               />
             }
@@ -111,10 +120,13 @@ const App = () => {
             render={() => 
               <SerieA 
                 highlights={highlightsState.highlights} 
+                areHighlightsLoading={highlightsState.areHighlightsLoading}
                 haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsSA}
+                areStandingsLoading={standingsState.areStandingsLoading}
                 haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersSA}
+                areScorersLoading={scorersState.areScorersLoading}
                 haveScorersError={scorersState.haveScorersError}
               />
             }
@@ -124,10 +136,13 @@ const App = () => {
             render={() => 
               <Ligue1 
                 highlights={highlightsState.highlights} 
+                areHighlightsLoading={highlightsState.areHighlightsLoading}
                 haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsFL1}
+                areStandingsLoading={standingsState.areStandingsLoading}
                 haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersFL1}
+                areScorersLoading={scorersState.areScorersLoading}
                 haveScorersError={scorersState.haveScorersError}
               />
             }

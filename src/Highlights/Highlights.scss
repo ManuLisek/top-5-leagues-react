@@ -31,6 +31,13 @@
     height: auto;
   }
 
+  //   &__aside {
+  //     flex-basis: 35%;
+  //     min-width: 280px;
+  //     padding: 0 10px;
+  //     text-align: center;
+  //   }
+
   &__fieldset {
     margin-top: 20px;
     border: 1px solid $color-font-fieldset;
@@ -44,5 +51,20 @@
     margin-left: 5%;
     color: $color-font-fieldset;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 785px) {
+  .highlights {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .highlights {
+    margin-top: 520px;
+    &__match-container {
+      width: 90%;
+    }
   }
 }

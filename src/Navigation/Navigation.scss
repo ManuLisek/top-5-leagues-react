@@ -9,6 +9,7 @@
   background-color: $color-background-navigation;
   border-bottom: 1px solid $color-font-main;
   z-index: 1;
+  white-space: nowrap;
 
   &__logo {
     padding: 10px 0;
@@ -48,5 +49,37 @@
 
   &__ligue1 {
     margin-right: 2vw;
+  }
+}
+
+@media (max-width: 790px) {
+  .navigation {
+    position: relative;
+    height: 194px;
+    flex-direction: column;
+    &__logo {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .navigation {
+    height: 510px;
+    position: absolute;
+    // overflow: hidden;
+    &__list {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__list-item {
+      width: 80%;
+      text-align: center;
+    }
+
+    &__ligue1 {
+      margin-right: 0;
+    }
   }
 }

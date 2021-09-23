@@ -1,0 +1,14 @@
+@import "../styles/settings.scss";
+
+.home {
+  height: calc(100vh - 58px);
+  padding-top: 100px;
+  background-color: $color-background-section;
+}
+
+@media (max-width: 560px) {
+  .home {
+    padding-top: 520px;
+    height: 150vh;
+  }
+}

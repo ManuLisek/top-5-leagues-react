@@ -1,7 +1,7 @@
 import React, {useEffect, useReducer} from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import MainLayout from './MainLayout';
-import Home from './Home';
+import Home from './Home/Home';
 import PremierLeague from './Leagues/PremierLeague';
 import PrimeraDivision from './Leagues/PrimeraDivision';
 import Bundesliga from './Leagues/Bundesliga';

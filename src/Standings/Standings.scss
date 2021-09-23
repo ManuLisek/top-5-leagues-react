@@ -76,9 +76,15 @@
 @media (max-width: 785px) {
   .standings {
     margin: 40px auto 30px auto;
-
     &__td {
       padding: 5px 4px;
     }
+  }
+}
+
+@media (max-width: 320px) {
+  .standings {
+    overflow-x: auto;
+    display: block;
   }
 }

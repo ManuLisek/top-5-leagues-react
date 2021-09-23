@@ -19,7 +19,7 @@
   &__vs {
     justify-self: center;
     width: 6%;
-    padding: 0 2%;
+    padding: 0 16px;
   }
   &__arrow {
     font-size: 32px;
@@ -57,17 +57,20 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 360px) {
   .match {
+    font-size: 6vw;
     &__teams {
-      font-size: 16px;
+      flex-wrap: wrap;
+      padding: 15px 0;
     }
     &__arrow-container {
       width: 5%;
-      padding: 0 2%;
+      padding-top: 10px;
+      flex-basis: 100%;
     }
-    &__arrow {
-      font-size: 28px;
-    }
+    // &__arrow {
+    //   font-size: 28px;
+    // }
   }
 }

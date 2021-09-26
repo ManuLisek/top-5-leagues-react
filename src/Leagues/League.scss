@@ -3,7 +3,6 @@
 .league {
   display: flex;
   justify-content: center;
-  background-color: $color-background-section;
   min-height: calc(100vh - 58px);
   &__main {
     flex-grow: 1;

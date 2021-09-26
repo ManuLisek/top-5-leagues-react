@@ -47,7 +47,7 @@
 
 @media (max-width: 785px) {
   .highlights {
-    margin-top: 40px;
+    margin-top: 220px;
   }
 }
 
@@ -56,6 +56,18 @@
     margin-top: 520px;
     &__match-container {
       width: 90%;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .highlights {
+    font-size: 6vw;
+    &__image {
+      width: 65%;
+    }
+    &__fieldset {
+      font-size: 12px;
     }
   }
 }

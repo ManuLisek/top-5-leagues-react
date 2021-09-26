@@ -30,3 +30,14 @@
     height: 17px;
   }
 }
+
+@media (max-width: 320px) {
+  .scorers {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}

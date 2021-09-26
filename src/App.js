@@ -1,6 +1,6 @@
 import React, {useEffect, useReducer} from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
-import MainLayout from './MainLayout';
+import MainLayout from './MainLayout/MainLayout';
 import Home from './Home/Home';
 import PremierLeague from './Leagues/PremierLeague';
 import PrimeraDivision from './Leagues/PrimeraDivision';

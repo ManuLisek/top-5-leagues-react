@@ -10,7 +10,7 @@
   border-bottom: 1px solid $color-font-main;
   z-index: 1;
   white-space: nowrap;
-
+  transition: $transition-toggle-nav;
   &__logo {
     padding: 10px 0;
     margin-left: 3vw;
@@ -50,15 +50,23 @@
   &__ligue1 {
     margin-right: 2vw;
   }
+
+  &--hide {
+    transform: translate(0, -80px);
+  }
 }
 
 @media (max-width: 790px) {
   .navigation {
-    position: relative;
+    // position: relative;
     height: 194px;
     flex-direction: column;
     &__logo {
       margin-left: 0;
+    }
+
+    &--hide {
+      transform: translate(0, -194px);
     }
   }
 }
@@ -80,6 +88,10 @@
 
     &__ligue1 {
       margin-right: 0;
+    }
+
+    &--hide {
+      transform: none;
     }
   }
 }

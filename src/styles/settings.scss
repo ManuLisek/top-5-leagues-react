@@ -16,6 +16,7 @@ $color-standings-tomato: tomato;
 $color-standings-red: red;
 
 $transition-navigation: 0.2s ease-in-out;
+$transition-toggle-nav: transform 1s ease-in-out;
 $transition-match: 0.5s linear;
 
 @mixin table {

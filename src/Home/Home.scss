@@ -6,6 +6,12 @@
   background-color: $color-background-section;
 }
 
+@media (max-width: 790px) {
+  .home {
+    padding-top: 204px;
+  }
+}
+
 @media (max-width: 560px) {
   .home {
     padding-top: 520px;

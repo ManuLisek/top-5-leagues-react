@@ -4,7 +4,7 @@ import './NotFound.scss';
 function NotFound(){
   return(
     <>
-      <div className='not-found'>Nie ma takiej strony.</div>
+      <h2 className='not-found'>Nie ma takiej strony.</h2>
     </>
   );
 }

@@ -9,7 +9,7 @@ import './League.scss';
 
 
 const League = (props) => {
-  const {highlights, areHighlightsLoading, haveHighlightsError, areStandingsLoading, haveStandingsError, scorers, areScorersLoading, haveScorersError, competitionName, leagueName, flagUrl, alt, table, tableKey} = props;
+  const {areHighlightsLoading, haveHighlightsError, areStandingsLoading, areScorersLoading} = props;
 
   return(
     areHighlightsLoading && areStandingsLoading && areScorersLoading
@@ -17,11 +17,11 @@ const League = (props) => {
       :   (!haveHighlightsError
         ?   <section className="league">
           <main className="league__main">
-            <Highlights highlights={highlights} competitionName={competitionName} leagueName={leagueName} flagUrl={flagUrl} alt={alt}/>
+            <Highlights {...props}/>
           </main>
           <aside className="league__aside">
-            <Standings haveStandingsError={haveStandingsError} table={table} tableKey={tableKey}/>
-            <Scorers scorers={scorers} haveScorersError={haveScorersError}/>
+            <Standings {...props}/>
+            <Scorers {...props}/>
           </aside>
         </section>
         :   <Error/>)
@@ -29,20 +29,11 @@ const League = (props) => {
   );};
 
 League.propTypes = {
-  highlights: PropTypes.array,
   areHighlightsLoading: PropTypes.bool,
   haveHighlightsError: PropTypes.bool,
   areStandingsLoading: PropTypes.bool,
-  haveStandingsError: PropTypes.bool,
-  scorers: PropTypes.array,
   areScorersLoading: PropTypes.bool,
-  haveScorersError: PropTypes.bool,
-  competitionName: PropTypes.string,
-  leagueName: PropTypes.string,
-  flagUrl: PropTypes.string,
-  alt: PropTypes.string,
-  table: PropTypes.array,
-  tableKey: PropTypes.object,
+
 };
 
 

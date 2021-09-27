@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const PrimeraDivision = (props) => {
 
-  const {highlights, areHighlightsLoading, haveHighlightsError, standings, areStandingsLoading, haveStandingsError, scorers, areScorersLoading, haveScorersError} = props;
+  const {standings} = props;
   const competitionName = 'SPAIN: La Liga';
   const leagueName = 'Premera Division';
   const flagUrl = 'https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg';
@@ -59,14 +59,7 @@ const PrimeraDivision = (props) => {
   return (
     <div>
       <League 
-        highlights={highlights} 
-        areHighlightsLoading={areHighlightsLoading}
-        haveHighlightsError={haveHighlightsError}
-        areStandingsLoading={areStandingsLoading}
-        haveStandingsError={haveStandingsError}
-        scorers={scorers}
-        areScorersLoading={areScorersLoading}
-        haveScorersError={haveScorersError}
+        {...props}
         competitionName={competitionName} 
         leagueName={leagueName} 
         flagUrl={flagUrl} 
@@ -79,15 +72,7 @@ const PrimeraDivision = (props) => {
 };
 
 PrimeraDivision.propTypes = {
-  highlights: PropTypes.array,
-  areHighlightsLoading: PropTypes.bool,
-  haveHighlightsError: PropTypes.bool,
   standings: PropTypes.array,
-  areStandingsLoading: PropTypes.bool,
-  haveStandingsError: PropTypes.bool,
-  scorers: PropTypes.array,
-  areScorersLoading: PropTypes.bool,
-  haveScorersError: PropTypes.bool,
 };
 
 export default PrimeraDivision;

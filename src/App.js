@@ -16,13 +16,20 @@ import { initialStateStandings, standingsReducer } from './reducers/standingsRed
 import { initialStateScorers, scorersReducer } from './reducers/scorersReducer';
 import './styles/global.scss';
 
-
-
 const App = () => {
 
   const [highlightsState, highlightsDispatch] = useReducer(highlightsReducer, initialStateHighlights);
   const [standingsState, standingsDispatch] = useReducer(standingsReducer, initialStateStandings);
   const [scorersState, scorersDispatch] = useReducer(scorersReducer, initialStateScorers);
+  const commonProps = {
+    highlights: highlightsState.highlights,
+    areHighlightsLoading: highlightsState.areHighlightsLoading,
+    haveHighlightsError: highlightsState.haveHighlightsError,
+    areStandingsLoading: standingsState.areStandingsLoading,
+    haveStandingsError: standingsState.haveStandingsError,
+    areScorersLoading: scorersState.areScorersLoading,
+    haveScorersError: scorersState.haveScorersError,
+  };
 
   useEffect(() => {
     HighlightsAPI.getAllHighlights()
@@ -31,7 +38,7 @@ const App = () => {
       })
       .catch(error => {
         highlightsDispatch({type: 'FETCH_HIGHLIGHTS_ERROR'});
-        console.log(error);
+        return error;
       });
   }, []);
 
@@ -42,7 +49,7 @@ const App = () => {
       })
       .catch(error => {
         standingsDispatch({type: 'FETCH_STANDINGS_ERROR'});
-        console.log(error);
+        return error;
       });
   }, []);
 
@@ -53,11 +60,10 @@ const App = () => {
       }) 
       .catch(error => {
         scorersDispatch({type: 'FETCH_SCORERS_ERROR'});
-        console.log(error);
+        return error;
       });
   }, []);
 
-  console.log(scorersState);
   return(
     <BrowserRouter>
       <MainLayout>
@@ -71,15 +77,9 @@ const App = () => {
             path="/PremierLeague" 
             render={() => 
               <PremierLeague 
-                highlights={highlightsState.highlights} 
-                areHighlightsLoading={highlightsState.areHighlightsLoading}
-                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsPL}
-                areStandingsLoading={standingsState.areStandingsLoading}
-                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersPL}
-                areScorersLoading={scorersState.areScorersLoading}
-                haveScorersError={scorersState.haveScorersError}
+                {...commonProps}
               />
             }
           />
@@ -87,15 +87,9 @@ const App = () => {
             path="/PrimeraDivision" 
             render={() => 
               <PrimeraDivision 
-                highlights={highlightsState.highlights} 
-                areHighlightsLoading={highlightsState.areHighlightsLoading}
-                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsPD}
-                areStandingsLoading={standingsState.areStandingsLoading}
-                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersPD}
-                areScorersLoading={scorersState.areScorersLoading}
-                haveScorersError={scorersState.haveScorersError}
+                {...commonProps}
               />
             }
           />
@@ -103,15 +97,9 @@ const App = () => {
             path="/Bundesliga" 
             render={() => 
               <Bundesliga 
-                highlights={highlightsState.highlights}
-                areHighlightsLoading={highlightsState.areHighlightsLoading}
-                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsBL1}
-                areStandingsLoading={standingsState.areStandingsLoading}
-                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersBL1}
-                areScorersLoading={scorersState.areScorersLoading}
-                haveScorersError={scorersState.haveScorersError}
+                {...commonProps}
               />
             }
           />
@@ -119,15 +107,9 @@ const App = () => {
             path="/SerieA" 
             render={() => 
               <SerieA 
-                highlights={highlightsState.highlights} 
-                areHighlightsLoading={highlightsState.areHighlightsLoading}
-                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsSA}
-                areStandingsLoading={standingsState.areStandingsLoading}
-                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersSA}
-                areScorersLoading={scorersState.areScorersLoading}
-                haveScorersError={scorersState.haveScorersError}
+                {...commonProps}
               />
             }
           />
@@ -135,15 +117,9 @@ const App = () => {
             path="/Ligue1" 
             render={() => 
               <Ligue1 
-                highlights={highlightsState.highlights} 
-                areHighlightsLoading={highlightsState.areHighlightsLoading}
-                haveHighlightsError={highlightsState.haveHighlightsError}
                 standings={standingsState.standingsFL1}
-                areStandingsLoading={standingsState.areStandingsLoading}
-                haveStandingsError={standingsState.haveStandingsError}
                 scorers={scorersState.scorersFL1}
-                areScorersLoading={scorersState.areScorersLoading}
-                haveScorersError={scorersState.haveScorersError}
+                {...commonProps}
               />
             }
           />

@@ -1,15 +1,10 @@
 .error {
-  padding: 100px;
+  padding: 100px 0 100px 0;
+  text-align: center;
 }
 
-@media (max-width: 790px) {
+@media (max-width: 964px) {
   .error {
-    padding-top: 204px;
-  }
-}
-
-@media (max-width: 560px) {
-  .error {
-    padding-top: 520px;
+    padding-top: 50px;
   }
 }

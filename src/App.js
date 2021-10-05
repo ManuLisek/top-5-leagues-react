@@ -1,5 +1,5 @@
 import React, {useEffect, useReducer} from 'react';
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import MainLayout from './MainLayout/MainLayout';
 import Home from './Home/Home';
 import PremierLeague from './Leagues/PremierLeague';
@@ -36,9 +36,8 @@ const App = () => {
       .then(allHighlights => {
         highlightsDispatch({type: 'FETCH_HIGHLIGHTS_SUCCESS', payload: allHighlights});
       })
-      .catch(error => {
+      .catch(() => {
         highlightsDispatch({type: 'FETCH_HIGHLIGHTS_ERROR'});
-        return error;
       });
   }, []);
 
@@ -47,9 +46,8 @@ const App = () => {
       .then(allStandings => {
         standingsDispatch({type: 'FETCH_STANDINGS_SUCCESS', payload: allStandings});
       })
-      .catch(error => {
+      .catch(() => {
         standingsDispatch({type: 'FETCH_STANDINGS_ERROR'});
-        return error;
       });
   }, []);
 
@@ -58,20 +56,19 @@ const App = () => {
       .then(allScorers => {
         scorersDispatch({type: 'FETCH_SCORERS_SUCCESS', payload: allScorers});
       }) 
-      .catch(error => {
+      .catch(() => {
         scorersDispatch({type: 'FETCH_SCORERS_ERROR'});
-        return error;
       });
   }, []);
 
   return(
-    <BrowserRouter>
+    <Router>
       <MainLayout>
         <Switch>
           <Route 
             path="/" 
             exact 
-            component={Home}
+            render={() => <Home />}
           />
           <Route 
             path="/PremierLeague" 
@@ -130,7 +127,7 @@ const App = () => {
           />
         </Switch>
       </MainLayout>
-    </BrowserRouter>
+    </Router>
   );};
 
 export default App;

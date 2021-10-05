@@ -1,7 +1,7 @@
 @import "../styles/settings.scss";
 
 .home {
-  height: calc(100vh - 58px);
+  min-height: calc(100vh - 58px);
   padding-top: 100px;
   background-color: $color-background-section;
 }

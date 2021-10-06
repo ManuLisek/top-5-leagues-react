@@ -2,11 +2,11 @@ import axios from 'axios';
 
 
 export const getAllStandings = async () => {
-  const urlStandingsPL = 'http://api.football-data.org/v2/competitions/2021/standings';
-  const urlStandingsPD = 'http://api.football-data.org/v2/competitions/2014/standings';
-  const urlStandingsBL1 = 'http://api.football-data.org/v2/competitions/2002/standings';
-  const urlStandingsSA = 'http://api.football-data.org/v2/competitions/2019/standings';
-  const urlStandingsFL1 = 'http://api.football-data.org/v2/competitions/2015/standings';
+  const urlStandingsPL = 'https://api.football-data.org/v2/competitions/2021/standings';
+  const urlStandingsPD = 'https://api.football-data.org/v2/competitions/2014/standings';
+  const urlStandingsBL1 = 'https://api.football-data.org/v2/competitions/2002/standings';
+  const urlStandingsSA = 'https://api.football-data.org/v2/competitions/2019/standings';
+  const urlStandingsFL1 = 'https://api.football-data.org/v2/competitions/2015/standings';
 
   const allUrls = [urlStandingsPL, urlStandingsPD, urlStandingsBL1, urlStandingsSA, urlStandingsFL1];
 

@@ -1,4 +1,5 @@
 @import "../styles/settings.scss";
+@import "../styles/breakpoints.scss";
 
 .navigation {
   display: flex;
@@ -15,11 +16,9 @@
     padding: 10px 0;
     margin-left: 3vw;
   }
-
   &__image {
     width: 160px;
   }
-
   &__list {
     flex-grow: 1;
     display: flex;
@@ -27,7 +26,6 @@
     justify-content: flex-end;
     height: 100%;
   }
-
   &__list-item {
     padding: 28px 2vw;
     color: $color-font-main;
@@ -35,61 +33,51 @@
     text-decoration: none;
     border-bottom: 4px solid $color-background-navigation;
     transition: $transition-navigation;
-
     &:hover {
       background-color: $color-background-navigation-hover;
       border-bottom-color: $color-background-navigation-hover;
     }
-
     &.active {
       color: $color-details;
       border-bottom-color: $color-details;
     }
   }
-
   &__ligue1 {
     margin-right: 2vw;
   }
-
   &--hide {
     transform: translate(0, -80px);
   }
 }
 
-@media (max-width: 790px) {
+@media (max-width: $screen-lg) {
   .navigation {
-    // position: relative;
     height: 194px;
     flex-direction: column;
     &__logo {
       margin-left: 0;
     }
-
     &--hide {
       transform: translate(0, -194px);
     }
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: $screen-md) {
   .navigation {
     height: 510px;
     position: absolute;
-    // overflow: hidden;
     &__list {
       flex-direction: column;
       width: 100%;
     }
-
     &__list-item {
       width: 80%;
       text-align: center;
     }
-
     &__ligue1 {
       margin-right: 0;
     }
-
     &--hide {
       transform: none;
     }

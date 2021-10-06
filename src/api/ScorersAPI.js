@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 export const getAllScorers = async () => {
-  const urlScorersPL = 'http://api.football-data.org/v2/competitions/PL/scorers';
-  const urlScorersPD = 'http://api.football-data.org/v2/competitions/PD/scorers';
-  const urlScorersBL1 = 'http://api.football-data.org/v2/competitions/BL1/scorers';
-  const urlScorersSA = 'http://api.football-data.org/v2/competitions/SA/scorers';
-  const urlScorersFL1 = 'http://api.football-data.org/v2/competitions/FL1/scorers';
+  const urlScorersPL = 'https://api.football-data.org/v2/competitions/PL/scorers';
+  const urlScorersPD = 'https://api.football-data.org/v2/competitions/PD/scorers';
+  const urlScorersBL1 = 'https://api.football-data.org/v2/competitions/BL1/scorers';
+  const urlScorersSA = 'https://api.football-data.org/v2/competitions/SA/scorers';
+  const urlScorersFL1 = 'https://api.football-data.org/v2/competitions/FL1/scorers';
 
   const allUrls = [urlScorersPL, urlScorersPD, urlScorersBL1, urlScorersSA, urlScorersFL1];
 

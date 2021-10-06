@@ -1,8 +1,8 @@
 @import "../styles/settings.scss";
+@import "../styles/breakpoints.scss";
 
 .highlights {
   flex-grow: 1;
-  margin-top: 110px;
   display: flex;
   flex-direction: column;
   &__match-container {
@@ -16,20 +16,16 @@
     font-size: 20px;
     color: $color-font-main;
   }
-
   &__header {
     text-align: center;
   }
-
   &__flag-container {
     height: 134px;
   }
-
   &__image {
     width: 200px;
     height: auto;
   }
-
   &__fieldset {
     margin-top: 20px;
     border: 1px solid $color-font-fieldset;
@@ -37,7 +33,6 @@
     border-bottom: none;
     border-right: none;
   }
-
   &__date {
     margin-left: 5%;
     color: $color-font-fieldset;
@@ -45,22 +40,22 @@
   }
 }
 
-@media (max-width: 785px) {
+@media (max-width: $screen-lg) {
   .highlights {
-    margin-top: 220px;
+    // margin-top: 220px;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: $screen-md) {
   .highlights {
-    margin-top: 520px;
+    // margin-top: 520px;
     &__match-container {
       width: 90%;
     }
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: $screen-sm) {
   .highlights {
     font-size: 6vw;
     &__image {

@@ -1,4 +1,5 @@
 @import "../styles/settings.scss";
+@import "../styles/breakpoints.scss";
 
 .match {
   &__teams {
@@ -49,7 +50,7 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: $screen-sm) {
   .match {
     font-size: 6vw;
     &__teams {
@@ -61,8 +62,5 @@
       padding-top: 10px;
       flex-basis: 100%;
     }
-    // &__arrow {
-    //   font-size: 28px;
-    // }
   }
 }

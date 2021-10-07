@@ -1,0 +1,10 @@
+@import "../../assets/styles/settings.scss";
+
+.loader-comp {
+  height: calc(100vh - 58px);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background-color: $color-tertiary;
+}

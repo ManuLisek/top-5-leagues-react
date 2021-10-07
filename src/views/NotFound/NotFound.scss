@@ -1,0 +1,21 @@
+@import "../../assets/styles/settings.scss";
+@import "../../assets/styles/breakpoints.scss";
+
+.not-found {
+  min-height: calc(100vh - 58px);
+  padding-top: 100px;
+  background-color: $color-tertiary;
+  text-align: center;
+}
+
+@media (max-width: $screen-lg) {
+  .not-found {
+    padding-top: 204px;
+  }
+}
+
+@media (max-width: $screen-md) {
+  .not-found {
+    padding-top: 520px;
+  }
+}

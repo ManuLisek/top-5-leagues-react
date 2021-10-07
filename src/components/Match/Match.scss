@@ -1,0 +1,67 @@
+@import "../../assets/styles/settings.scss";
+@import "../../assets/styles/breakpoints.scss";
+
+.match {
+  &__teams {
+    background-color: $color-secondary;
+    border: 1px solid $color-white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 2%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  &__team {
+    width: 35%;
+    padding: 0 2%;
+  }
+  &__vs {
+    margin: 0 4px;
+  }
+  &__arrow {
+    font-size: 32px;
+    color: $color-tan;
+    justify-self: end;
+    transition: $transition-match;
+    cursor: pointer;
+    font-display: block;
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+  &__arrow-container {
+    width: 20%;
+  }
+  &__video {
+    overflow: hidden;
+    transition: $transition-match;
+    max-height: 0;
+    margin-bottom: 55px;
+    border: 1px solid $color-white;
+    border-top: none;
+    background-color: $color-white;
+    &--active {
+      transform: translate(0, 0);
+      position: relative;
+      padding-bottom: calc(56.25% + 43px); /* 16:9 */
+      height: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .match {
+    font-size: 6vw;
+    &__teams {
+      flex-wrap: wrap;
+      padding: 15px 0;
+    }
+    &__arrow-container {
+      width: 5%;
+      padding-top: 10px;
+      flex-basis: 100%;
+    }
+  }
+}

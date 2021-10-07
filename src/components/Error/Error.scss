@@ -1,0 +1,12 @@
+@import "../../assets/styles/breakpoints.scss";
+
+.error {
+  padding-top: 100px;
+  text-align: center;
+}
+
+@media (max-width: $screen-xl) {
+  .error {
+    padding: 50px 0;
+  }
+}

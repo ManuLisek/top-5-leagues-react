@@ -1,20 +1,20 @@
 import React, {useEffect, useReducer} from 'react';
 import {HashRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
-import MainLayout from './MainLayout/MainLayout';
-import Home from './Home/Home';
-import PremierLeague from './Leagues/PremierLeague';
-import PrimeraDivision from './Leagues/PrimeraDivision';
-import Bundesliga from './Leagues/Bundesliga';
-import SerieA from './Leagues/SerieA';
-import Ligue1 from './Leagues/Ligue1';
-import NotFound from './NotFound/NotFound';
-import * as HighlightsAPI from './api/HighlightsAPI';
-import * as StandingsAPI from './api/StandingsAPI';
-import * as ScorersAPI from './api/ScorersAPI';
+import MainLayout from './components/MainLayout/MainLayout';
+import Home from './views/Home/Home';
+import PremierLeague from './views/PremierLeague';
+import PrimeraDivision from './views/PrimeraDivision';
+import Bundesliga from './views/Bundesliga';
+import SerieA from './views/SerieA';
+import Ligue1 from './views/Ligue1';
+import NotFound from './views/NotFound/NotFound';
+import * as HighlightsAPI from './APIs/HighlightsAPI';
+import * as StandingsAPI from './APIs/StandingsAPI';
+import * as ScorersAPI from './APIs/ScorersAPI';
 import { initialStateHighlights, highlightsReducer } from './reducers/highlightsReducer';
 import { initialStateStandings, standingsReducer } from './reducers/standingsReducer';
 import { initialStateScorers, scorersReducer } from './reducers/scorersReducer';
-import './styles/global.scss';
+import './assets/styles/global.scss';
 
 const App = () => {
 

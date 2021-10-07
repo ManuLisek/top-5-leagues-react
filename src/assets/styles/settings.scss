@@ -1,0 +1,36 @@
+$color-white: white;
+$color-gray: gray;
+$color-tan: tan;
+
+$color-primary: #07695c;
+$color-primary-hovered: #187a6d;
+$color-secondary: #34495e;
+$color-tertiary: #d1d5da;
+$color-fourth: #2f3640;
+
+$color-standings-green: green;
+$color-standings-limegreen: limegreen;
+$color-standings-lightgreen: lightgreen;
+$color-standings-orange: orange;
+$color-standings-tomato: tomato;
+$color-standings-red: red;
+
+$transition-navigation: 0.2s ease-in-out;
+$transition-toggle-nav: transform 1s ease-in-out;
+$transition-match: 0.5s linear;
+
+@mixin table {
+  background-color: $color-white;
+  border: 1px solid $color-white;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+@mixin th {
+  height: 32px;
+  padding: 5px 8px;
+  background-color: $color-secondary;
+  color: $color-white;
+}

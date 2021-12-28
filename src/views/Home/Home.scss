@@ -2,19 +2,28 @@
 @import "../../assets/styles/breakpoints.scss";
 
 .home {
-  min-height: calc(100vh - 58px);
-  padding-top: 100px;
-  background-color: $color-tertiary;
+	min-height: calc(100vh - 58px);
+	padding: 50px;
+	padding-top: 100px;
+	background-color: $color-tertiary;
+	&__header {
+		text-align: center;
+		padding: 20px;
+	}
+	&__content {
+		font-size: 18px;
+		line-height: 30px;
+	}
 }
 
 @media (max-width: $screen-lg) {
-  .home {
-    padding-top: 204px;
-  }
+	.home {
+		padding-top: 204px;
+	}
 }
 
 @media (max-width: $screen-md) {
-  .home {
-    padding-top: 520px;
-  }
+	.home {
+		padding-top: 520px;
+	}
 }

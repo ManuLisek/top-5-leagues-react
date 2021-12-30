@@ -40,7 +40,9 @@ const Highlights = (props) => {
         <h2 className="highlights__league-name">{leagueName}</h2>
       </header>
       <ul className="highlights__matches-list">
-        {highlightsList}
+        {highlightsList.length > 0
+          ? highlightsList
+          : <div className="highlights__notification">Currently there is no video.</div>}
       </ul>
     </div>
   );};

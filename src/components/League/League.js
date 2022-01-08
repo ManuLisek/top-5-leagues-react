@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Highlights from '../Highlights/Highlights';
-import Scorers from '../Scorers/Scorers';
-import Standings from '../Standings/Standings';
 import PropTypes from 'prop-types';
 import LoaderComp from '../LoaderComp/LoaderComp';
 import Error from '../Error/Error';
@@ -10,6 +8,8 @@ import './League.scss';
 
 const League = (props) => {
   const {areHighlightsLoading, haveHighlightsError, areStandingsLoading, areScorersLoading} = props;
+  const Scorers = React.lazy(() => import('../Scorers/Scorers'));
+  const Standings = React.lazy(() => import('../Standings/Standings'));
 
   return(
     areHighlightsLoading && areStandingsLoading && areScorersLoading
@@ -20,8 +20,12 @@ const League = (props) => {
             <Highlights {...props}/>
           </main>
           <aside className="league__aside">
-            <Standings {...props}/>
-            <Scorers {...props}/>
+            <Suspense fallback={null}>
+              <Standings {...props}/>
+            </Suspense>
+            <Suspense fallback={null}>
+              <Scorers {...props}/>
+            </Suspense>
           </aside>
         </section>
         :   <Error/>)

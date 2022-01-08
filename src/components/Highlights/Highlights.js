@@ -1,14 +1,11 @@
-import React from 'react';
-import Match from '../Match/Match';
+import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import './Highlights.scss';
-
-
 
 const Highlights = (props) => {
   const {highlights, competitionName, leagueName, flagUrl, alt} = props;
   const singleLeague = highlights.filter(item => item.competition.name === competitionName);
-
+  const Match = React.lazy(() => import('../Match/Match'));
   const highlightsList = singleLeague.map((item, i, array) => {
 
     return(
@@ -18,13 +15,17 @@ const Highlights = (props) => {
             <legend className="highlights__date">{item.date.substring(0, 10)}</legend>
           </fieldset>
           <ul className="highlights__match" >
-            <Match match={item}/>
+            <Suspense fallback={null}>
+              <Match match={item}/>
+            </Suspense>
           </ul>
         </li>
         :   (array[i - 1].date.substring(0, 10) === item.date.substring(0, 10)
           ?   <li className="highlights__match-container" key={item.title}>
             <ul className="highlights__match" >
-              <Match match={item}/>
+              <Suspense fallback={null}>
+                <Match match={item}/>
+              </Suspense>
             </ul>
           </li>
           :   null

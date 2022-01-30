@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
-import PropTypes from 'prop-types';
 import './MainLayout.scss';
 
-const MainLayout = ({children}) => (
+const MainLayout = ({ children }) => (
   <div className="main-layout">
     <Navigation />
     {children}

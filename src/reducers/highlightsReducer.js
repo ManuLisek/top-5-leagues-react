@@ -1,9 +1,9 @@
-export const initialStateHighlights = {   
+export const initialStateHighlights = {
   highlights: [],
   areHighlightsLoading: true,
   haveHighlightsError: false,
 };
-  
+
 export const highlightsReducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_HIGHLIGHTS_SUCCESS':

@@ -1,4 +1,4 @@
-export const initialStateScorers = {   
+export const initialStateScorers = {
   scorersPL: [],
   scorersPD: [],
   scorersBL1: [],
@@ -7,7 +7,7 @@ export const initialStateScorers = {
   areScorersLoading: true,
   haveScorersError: false,
 };
-  
+
 export const scorersReducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_SCORERS_SUCCESS':

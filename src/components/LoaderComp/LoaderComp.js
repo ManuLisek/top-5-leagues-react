@@ -3,16 +3,9 @@ import Loader from 'react-loader-spinner';
 import './LoaderComp.scss';
 
 const LoaderComp = () => {
-      
-  return(
+  return (
     <div className="loader-comp">
-      <Loader
-        type="Oval"
-        color="tan"
-        height={100}
-        width={100}
-
-      />  
+      <Loader type="Oval" color="tan" height={100} width={100} />
     </div>
   );
 };

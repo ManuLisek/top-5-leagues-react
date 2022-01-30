@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/top-5-leagues-react/static/css/main.5bbe6920.chunk.css",
-    "main.js": "/top-5-leagues-react/static/js/main.10727e00.chunk.js",
-    "main.js.map": "/top-5-leagues-react/static/js/main.10727e00.chunk.js.map",
-    "runtime-main.js": "/top-5-leagues-react/static/js/runtime-main.1f429f82.js",
-    "runtime-main.js.map": "/top-5-leagues-react/static/js/runtime-main.1f429f82.js.map",
+    "main.css": "/top-5-leagues-react/static/css/main.f88948b9.chunk.css",
+    "main.js": "/top-5-leagues-react/static/js/main.d32a272d.chunk.js",
+    "main.js.map": "/top-5-leagues-react/static/js/main.d32a272d.chunk.js.map",
+    "runtime-main.js": "/top-5-leagues-react/static/js/runtime-main.31692bfe.js",
+    "runtime-main.js.map": "/top-5-leagues-react/static/js/runtime-main.31692bfe.js.map",
     "static/js/2.413a444a.chunk.js": "/top-5-leagues-react/static/js/2.413a444a.chunk.js",
     "static/js/2.413a444a.chunk.js.map": "/top-5-leagues-react/static/js/2.413a444a.chunk.js.map",
     "static/js/3.d0378b83.chunk.js": "/top-5-leagues-react/static/js/3.d0378b83.chunk.js",
     "static/js/3.d0378b83.chunk.js.map": "/top-5-leagues-react/static/js/3.d0378b83.chunk.js.map",
     "static/css/4.f661a193.chunk.css": "/top-5-leagues-react/static/css/4.f661a193.chunk.css",
-    "static/js/4.798f066c.chunk.js": "/top-5-leagues-react/static/js/4.798f066c.chunk.js",
-    "static/js/4.798f066c.chunk.js.map": "/top-5-leagues-react/static/js/4.798f066c.chunk.js.map",
+    "static/js/4.34b8174b.chunk.js": "/top-5-leagues-react/static/js/4.34b8174b.chunk.js",
+    "static/js/4.34b8174b.chunk.js.map": "/top-5-leagues-react/static/js/4.34b8174b.chunk.js.map",
     "static/css/5.ca3aa42c.chunk.css": "/top-5-leagues-react/static/css/5.ca3aa42c.chunk.css",
     "static/js/5.3e3cb074.chunk.js": "/top-5-leagues-react/static/js/5.3e3cb074.chunk.js",
     "static/js/5.3e3cb074.chunk.js.map": "/top-5-leagues-react/static/js/5.3e3cb074.chunk.js.map",
@@ -22,15 +22,15 @@
     "static/css/4.f661a193.chunk.css.map": "/top-5-leagues-react/static/css/4.f661a193.chunk.css.map",
     "static/css/5.ca3aa42c.chunk.css.map": "/top-5-leagues-react/static/css/5.ca3aa42c.chunk.css.map",
     "static/css/6.9fd121f8.chunk.css.map": "/top-5-leagues-react/static/css/6.9fd121f8.chunk.css.map",
-    "static/css/main.5bbe6920.chunk.css.map": "/top-5-leagues-react/static/css/main.5bbe6920.chunk.css.map",
+    "static/css/main.f88948b9.chunk.css.map": "/top-5-leagues-react/static/css/main.f88948b9.chunk.css.map",
     "static/js/2.413a444a.chunk.js.LICENSE.txt": "/top-5-leagues-react/static/js/2.413a444a.chunk.js.LICENSE.txt",
     "static/js/3.d0378b83.chunk.js.LICENSE.txt": "/top-5-leagues-react/static/js/3.d0378b83.chunk.js.LICENSE.txt",
     "static/media/logo.a4b80aec.png": "/top-5-leagues-react/static/media/logo.a4b80aec.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1f429f82.js",
+    "static/js/runtime-main.31692bfe.js",
     "static/js/2.413a444a.chunk.js",
-    "static/css/main.5bbe6920.chunk.css",
-    "static/js/main.10727e00.chunk.js"
+    "static/css/main.f88948b9.chunk.css",
+    "static/js/main.d32a272d.chunk.js"
   ]
 }

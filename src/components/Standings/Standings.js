@@ -7,7 +7,7 @@ const Standings = (props) => {
 
   return !haveStandingsError ? (
     <>
-      <h3 className="standings__season">Season 2021/2022</h3>
+      <h3 className="standings__season">Season 2022/2023</h3>
       <table className="standings">
         <thead className="standings__thead">
           <tr className="standings__tr">
